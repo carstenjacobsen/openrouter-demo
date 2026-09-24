@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenRouter Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="chat-app">
+    <header class="chat-header">
+      <h1>OpenRouter Chat</h1>
+      <div class="header-right">
+        <span id="model-badge" class="model-badge"></span>
+        <a href="/stats" class="stats-link">Stats</a>
+        <button type="button" id="end-chat-btn" class="end-chat-btn">End Chat</button>
+      </div>
+    </header>
+
+    <main id="messages" class="messages">
+      <div class="empty-state" id="empty-state">Say hello to start the conversation.</div>
+    </main>
+
+    <form id="chat-form" class="chat-form">
+      <textarea
+        id="chat-input"
+        placeholder="Type a message..."
+        rows="1"
+        autofocus
+      ></textarea>
+      <button type="submit" id="send-btn">Send</button>
+    </form>
+  </div>
+
+  <div id="feedback-modal" class="modal-overlay hidden">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h2 id="modal-title">End Chat</h2>
+      <p>How was this conversation?</p>
+      <div class="thumb-options">
+        <button type="button" class="thumb-btn" id="thumb-up" data-rating="up" aria-label="Thumbs up" aria-pressed="false">👍</button>
+        <button type="button" class="thumb-btn" id="thumb-down" data-rating="down" aria-label="Thumbs down" aria-pressed="false">👎</button>
+      </div>
+      <div class="modal-actions">
+        <button type="button" id="modal-cancel" class="btn-secondary">Cancel</button>
+        <button type="button" id="modal-confirm" class="btn-primary" disabled>End Chat</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
