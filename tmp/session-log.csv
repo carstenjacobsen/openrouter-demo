@@ -1,0 +1,4 @@
+session_id,ended_at,vote,message_count,request_count,models_used,providers_used,input_tokens,output_tokens,total_tokens,total_cost_usd
+83bab01f-812a-4277-8747-7fb2659a32f9,2026-09-24T19:04:18.837Z,up,6,3,deepseek/deepseek-v4.1-flash;deepseek/deepseek-v4-flash-0731,Novita;Baidu,405,1432,1837,0.002058
+e6c1173d-dd47-448d-96cd-2e046f4290b1,2026-09-24T19:05:08.118Z,up,4,2,deepseek/deepseek-v4.1-flash;deepseek/deepseek-v4-flash-0731,Novita;Baidu,156,478,634,0.000691
+e508b20e-9693-4f89-8b5d-468b7893bbc7,2026-09-24T19:05:28.097Z,down,2,1,deepseek/deepseek-v4-flash-0731,Baidu,97,66,163,0.000130
