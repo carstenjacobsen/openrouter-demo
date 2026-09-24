@@ -1,9 +1,5 @@
 import { promises as fs } from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const csvPath = path.join(__dirname, "../data/session-log.csv");
+import { csvLogPath } from "./config.js";
 
 type SessionRow = {
   sessionId: string;
@@ -94,7 +90,7 @@ function parseCsv(content: string): string[][] {
 async function readSessionRows(): Promise<SessionRow[]> {
   let content: string;
   try {
-    content = await fs.readFile(csvPath, "utf8");
+    content = await fs.readFile(csvLogPath, "utf8");
   } catch {
     return [];
   }

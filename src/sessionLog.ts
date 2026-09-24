@@ -1,9 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const csvPath = path.join(__dirname, "../data/session-log.csv");
+import { csvLogPath } from "./config.js";
 
 const CSV_HEADER =
   "session_id,ended_at,vote,message_count,request_count,models_used,providers_used,input_tokens,output_tokens,total_tokens,total_cost_usd";
@@ -28,11 +25,11 @@ function csvField(value: string | number): string {
 }
 
 export async function appendSessionRow(row: SessionLogRow): Promise<void> {
-  await fs.mkdir(path.dirname(csvPath), { recursive: true });
+  await fs.mkdir(path.dirname(csvLogPath), { recursive: true });
 
   let fileExists = true;
   try {
-    await fs.access(csvPath);
+    await fs.access(csvLogPath);
   } catch {
     fileExists = false;
   }
@@ -54,5 +51,5 @@ export async function appendSessionRow(row: SessionLogRow): Promise<void> {
     .join(",");
 
   const content = fileExists ? `${line}\n` : `${CSV_HEADER}\n${line}\n`;
-  await fs.appendFile(csvPath, content, "utf8");
+  await fs.appendFile(csvLogPath, content, "utf8");
 }
