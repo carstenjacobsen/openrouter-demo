@@ -38,10 +38,10 @@ The chatbot application uses the following libraries/SDKs:
 ### Core Functionality
 The chatbot functionality can be into four core categories: Backend, UI, Stats, OpenRouter Client.
 
-* Backend - API to support frontend functionality
-* OpenRouter Client - The interface between the chatbot application and LLM models
-* UI - A very simple UI for interacting with the chatbot
-* Stats - Get insights about how models are performing and which models give the best cost/performance relation 
+* **Backend** - API to support frontend functionality
+* **OpenRouter Client** - The interface between the chatbot application and LLM models
+* **UI** - A very simple UI for interacting with the chatbot
+* **Stats** - Get insights about how models are performing and which models give the best cost/performance relation 
 
 The project stated out as a CLI-version, and the UI was added later, so the API is still supporting CLI commands.
 
